@@ -3,6 +3,7 @@ package uz.javokhirdev.calorytracker
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import uz.javokhirdev.calorytracker.onboarding.presentation.welcome.WelcomeScreen
 import uz.javokhirdev.calorytracker.ui.theme.CaloryTrackerTheme
 
 class MainActivity : ComponentActivity() {
@@ -10,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CaloryTrackerTheme {
-
+                WelcomeScreen()
             }
         }
     }
