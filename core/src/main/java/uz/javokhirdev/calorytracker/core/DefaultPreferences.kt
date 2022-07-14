@@ -6,8 +6,9 @@ import uz.javokhirdev.calorytracker.core.model.Gender
 import uz.javokhirdev.calorytracker.core.model.GoalType
 import uz.javokhirdev.calorytracker.core.model.UserInfo
 import uz.javokhirdev.calorytracker.core.preferences.Preferences
+import javax.inject.Inject
 
-class DefaultPreferences(
+class DefaultPreferences @Inject constructor(
     private val sharedPref: SharedPreferences
 ) : Preferences {
 
