@@ -45,6 +45,7 @@ fun GenderScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.weight(1f))
             Text(
                 text = stringResource(id = R.string.whats_your_gender),
                 style = MaterialTheme.typography.h3
@@ -77,10 +78,11 @@ fun GenderScreen(
                     )
                 )
             }
-            Spacer(modifier = Modifier.height(spacing.spaceLarge))
+            Spacer(modifier = Modifier.weight(1f))
             ActionButton(
                 text = stringResource(id = R.string.next),
-                onClick = viewModel::onNextClick
+                onClick = viewModel::onNextClick,
+                modifier = Modifier.align(Alignment.End)
             )
         }
     }

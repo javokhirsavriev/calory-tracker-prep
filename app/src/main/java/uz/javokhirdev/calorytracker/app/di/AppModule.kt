@@ -8,6 +8,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import uz.javokhirdev.calorytracker.core.DefaultPreferences
+import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
 import uz.javokhirdev.calorytracker.core.preferences.Preferences
 import javax.inject.Singleton
 
@@ -25,5 +26,10 @@ object AppModule {
     @[Provides Singleton]
     fun providePreferences(sharedPreferences: SharedPreferences): Preferences {
         return DefaultPreferences(sharedPreferences)
+    }
+
+    @[Provides Singleton]
+    fun provideFilterOutDigitsUseCase(): FilterOutDigits {
+        return FilterOutDigits()
     }
 }
