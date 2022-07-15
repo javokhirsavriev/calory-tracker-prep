@@ -18,6 +18,7 @@ import uz.javokhirdev.calorytracker.onboarding.presentation.age.AgeScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.gender.GenderScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.goal.GoalScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.height.HeightScreen
+import uz.javokhirdev.calorytracker.onboarding.presentation.nutrientgoal.NutrientGoalScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.weight.WeightScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.welcome.WelcomeScreen
 import uz.javokhirdev.calorytracker.ui.theme.CaloryTrackerTheme
@@ -64,7 +65,10 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
+                            NutrientGoalScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.ACTIVITY) {
                             ActivityScreen(onNavigate = navController::navigate)
