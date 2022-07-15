@@ -1,11 +1,11 @@
-package uz.javokhirdev.calorytracker.core
+package uz.javokhirdev.calorytracker.core.data.preferences
 
 import android.content.SharedPreferences
+import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.core.model.ActivityLevel
 import uz.javokhirdev.calorytracker.core.model.Gender
 import uz.javokhirdev.calorytracker.core.model.GoalType
 import uz.javokhirdev.calorytracker.core.model.UserInfo
-import uz.javokhirdev.calorytracker.core.preferences.Preferences
 import javax.inject.Inject
 
 class DefaultPreferences @Inject constructor(
@@ -87,6 +87,19 @@ class DefaultPreferences @Inject constructor(
             carbRatio = carbRatio,
             proteinRatio = proteinRatio,
             fatRatio = fatRatio
+        )
+    }
+
+    override fun saveShouldShowOnboarding(shouldShow: Boolean) {
+        sharedPref.edit()
+            .putBoolean(Preferences.KEY_SHOULD_SHOW_ONBOARDING, shouldShow)
+            .apply()
+    }
+
+    override fun loadShouldShowOnboarding(): Boolean {
+        return sharedPref.getBoolean(
+            Preferences.KEY_SHOULD_SHOW_ONBOARDING,
+            true
         )
     }
 }

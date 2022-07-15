@@ -7,8 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
-import uz.javokhirdev.calorytracker.coreui.Dimensions
-import uz.javokhirdev.calorytracker.coreui.LocalSpacing
+import uz.javokhirdev.calorytracker.coreui.*
 
 private val DarkColorPalette = darkColors(
     primary = BrightGreen,

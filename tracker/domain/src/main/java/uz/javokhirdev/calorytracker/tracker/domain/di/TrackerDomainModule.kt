@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import uz.javokhirdev.calorytracker.core.preferences.Preferences
+import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.tracker.domain.repository.TrackerRepository
 import uz.javokhirdev.calorytracker.tracker.domain.usecase.*
 

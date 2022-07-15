@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
 import uz.javokhirdev.calorytracker.core.navigation.Route
-import uz.javokhirdev.calorytracker.core.preferences.Preferences
+import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.core.util.UiEvent
 import uz.javokhirdev.calorytracker.onboarding.domain.usecase.ValidateNutrients
 import javax.inject.Inject
