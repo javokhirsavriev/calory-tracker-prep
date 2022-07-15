@@ -21,6 +21,7 @@ import uz.javokhirdev.calorytracker.onboarding.presentation.height.HeightScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.nutrientgoal.NutrientGoalScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.weight.WeightScreen
 import uz.javokhirdev.calorytracker.onboarding.presentation.welcome.WelcomeScreen
+import uz.javokhirdev.calorytracker.tracker.presentation.overview.TrackerOverviewScreen
 import uz.javokhirdev.calorytracker.ui.theme.CaloryTrackerTheme
 
 @AndroidEntryPoint
@@ -78,7 +79,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Route.TRACKER_OVERVIEW) {
-
+                            TrackerOverviewScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.SEARCH) {
 

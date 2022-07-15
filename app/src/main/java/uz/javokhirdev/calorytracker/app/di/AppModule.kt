@@ -7,9 +7,9 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import uz.javokhirdev.calorytracker.core.DefaultPreferences
+import uz.javokhirdev.calorytracker.core.data.preferences.DefaultPreferences
+import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
-import uz.javokhirdev.calorytracker.core.preferences.Preferences
 import javax.inject.Singleton
 
 @Module

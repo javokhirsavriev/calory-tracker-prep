@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import uz.javokhirdev.calorytracker.core.R
 import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
 import uz.javokhirdev.calorytracker.core.navigation.Route
-import uz.javokhirdev.calorytracker.core.preferences.Preferences
+import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.core.util.UiEvent
 import uz.javokhirdev.calorytracker.core.util.UiText
 import javax.inject.Inject
