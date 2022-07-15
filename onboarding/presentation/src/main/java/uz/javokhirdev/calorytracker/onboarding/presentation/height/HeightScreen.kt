@@ -1,4 +1,4 @@
-package uz.javokhirdev.calorytracker.onboarding.presentation.age
+package uz.javokhirdev.calorytracker.onboarding.presentation.height
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -19,10 +19,10 @@ import uz.javokhirdev.calorytracker.onboarding.presentation.components.ActionBut
 import uz.javokhirdev.calorytracker.onboarding.presentation.components.UnitTextField
 
 @Composable
-fun AgeScreen(
+fun HeightScreen(
     scaffoldState: ScaffoldState,
     onNavigate: (UiEvent.Navigate) -> Unit,
-    viewModel: AgeVM = hiltViewModel()
+    viewModel: HeightVM = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     val context = LocalContext.current
@@ -52,14 +52,14 @@ fun AgeScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.whats_your_age),
+                text = stringResource(id = R.string.whats_your_height),
                 style = MaterialTheme.typography.h3
             )
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             UnitTextField(
-                value = viewModel.age,
-                onValueChange = viewModel::onAgeEnter,
-                unit = stringResource(id = R.string.years)
+                value = viewModel.height,
+                onValueChange = viewModel::onHeightEnter,
+                unit = stringResource(id = R.string.cm)
             )
         }
         ActionButton(
