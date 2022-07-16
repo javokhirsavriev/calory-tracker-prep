@@ -2,10 +2,10 @@ package uz.javokhirdev.calorytracker.core.data.preferences
 
 import android.content.SharedPreferences
 import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
-import uz.javokhirdev.calorytracker.core.model.ActivityLevel
-import uz.javokhirdev.calorytracker.core.model.Gender
-import uz.javokhirdev.calorytracker.core.model.GoalType
-import uz.javokhirdev.calorytracker.core.model.UserInfo
+import uz.javokhirdev.calorytracker.core.domain.model.ActivityLevel
+import uz.javokhirdev.calorytracker.core.domain.model.Gender
+import uz.javokhirdev.calorytracker.core.domain.model.GoalType
+import uz.javokhirdev.calorytracker.core.domain.model.UserInfo
 import javax.inject.Inject
 
 class DefaultPreferences @Inject constructor(

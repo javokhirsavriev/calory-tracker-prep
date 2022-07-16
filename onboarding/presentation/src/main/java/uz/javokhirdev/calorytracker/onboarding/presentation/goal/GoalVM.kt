@@ -9,8 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
-import uz.javokhirdev.calorytracker.core.model.GoalType
-import uz.javokhirdev.calorytracker.core.navigation.Route
+import uz.javokhirdev.calorytracker.core.domain.model.GoalType
 import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
 import uz.javokhirdev.calorytracker.core.util.UiEvent
 import javax.inject.Inject
@@ -33,7 +32,7 @@ class GoalVM @Inject constructor(
     fun onNextClick() {
         viewModelScope.launch {
             preferences.saveGoalType(selectedGoal)
-            _uiEvent.send(UiEvent.Navigate(Route.NUTRIENT_GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

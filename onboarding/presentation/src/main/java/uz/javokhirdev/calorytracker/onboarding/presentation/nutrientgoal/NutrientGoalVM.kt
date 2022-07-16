@@ -9,9 +9,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
-import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
-import uz.javokhirdev.calorytracker.core.navigation.Route
 import uz.javokhirdev.calorytracker.core.domain.preferences.Preferences
+import uz.javokhirdev.calorytracker.core.domain.usecase.FilterOutDigits
 import uz.javokhirdev.calorytracker.core.util.UiEvent
 import uz.javokhirdev.calorytracker.onboarding.domain.usecase.ValidateNutrients
 import javax.inject.Inject
@@ -60,7 +59,7 @@ class NutrientGoalVM @Inject constructor(
                         preferences.saveFatRatio(result.fatRatio)
 
                         viewModelScope.launch {
-                            _uiEvent.send(UiEvent.Navigate(Route.TRACKER_OVERVIEW))
+                            _uiEvent.send(UiEvent.Success)
                         }
                     }
                     is ValidateNutrients.Result.Error -> {

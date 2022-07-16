@@ -1,4 +1,4 @@
-package uz.javokhirdev.calorytracker.core.model
+package uz.javokhirdev.calorytracker.core.domain.model
 
 sealed class Gender(val name: String) {
     object Male : Gender("male")

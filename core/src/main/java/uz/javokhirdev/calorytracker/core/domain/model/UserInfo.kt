@@ -1,4 +1,4 @@
-package uz.javokhirdev.calorytracker.core.model
+package uz.javokhirdev.calorytracker.core.domain.model
 
 data class UserInfo(
     val gender: Gender,

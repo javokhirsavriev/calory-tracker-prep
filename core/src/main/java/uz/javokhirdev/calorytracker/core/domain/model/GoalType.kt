@@ -1,4 +1,4 @@
-package uz.javokhirdev.calorytracker.core.model
+package uz.javokhirdev.calorytracker.core.domain.model
 
 sealed class GoalType(val name: String) {
     object LoseWeight : GoalType("lose_weight")

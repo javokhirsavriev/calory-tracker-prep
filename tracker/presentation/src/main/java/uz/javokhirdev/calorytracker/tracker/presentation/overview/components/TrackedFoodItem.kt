@@ -44,7 +44,7 @@ fun TrackedFoodItem(
                 elevation = 1.dp,
                 shape = RoundedCornerShape(5.dp)
             )
-            .background(color = MaterialTheme.colors.surface)
+            .background(MaterialTheme.colors.surface)
             .padding(end = spacing.spaceMedium)
             .height(100.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -55,8 +55,8 @@ fun TrackedFoodItem(
                 data = trackedFood.imageUrl,
                 builder = {
                     crossfade(true)
-                    error(R.drawable.ic_breakfast)
-                    fallback(R.drawable.ic_breakfast)
+                    error(R.drawable.ic_burger)
+                    fallback(R.drawable.ic_burger)
                 }
             ),
             contentDescription = trackedFood.name,
@@ -72,7 +72,9 @@ fun TrackedFoodItem(
                 )
         )
         Spacer(modifier = Modifier.width(spacing.spaceMedium))
-        Column(modifier = Modifier.weight(1f)) {
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
             Text(
                 text = trackedFood.name,
                 style = MaterialTheme.typography.body1,

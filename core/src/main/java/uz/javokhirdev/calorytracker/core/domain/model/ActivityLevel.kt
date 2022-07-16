@@ -1,4 +1,4 @@
-package uz.javokhirdev.calorytracker.core.model
+package uz.javokhirdev.calorytracker.core.domain.model
 
 sealed class ActivityLevel(val name: String) {
     object Low : ActivityLevel("low")
