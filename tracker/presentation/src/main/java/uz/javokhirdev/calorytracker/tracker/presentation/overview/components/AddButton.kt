@@ -2,10 +2,7 @@ package uz.javokhirdev.calorytracker.tracker.presentation.overview.components
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -33,13 +30,14 @@ fun AddButton(
 
     Row(
         modifier = modifier
-            .clip(RoundedCornerShape(100.dp))
+            .clip(RoundedCornerShape(100f))
             .clickable { onClick() }
             .border(
                 width = 1.dp,
                 color = color,
-                shape = RoundedCornerShape(100.dp)
-            ),
+                shape = RoundedCornerShape(100f)
+            )
+            .padding(spacing.spaceMedium),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {

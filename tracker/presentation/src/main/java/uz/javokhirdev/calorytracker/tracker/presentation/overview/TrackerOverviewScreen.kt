@@ -10,19 +10,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.annotation.ExperimentalCoilApi
 import uz.javokhirdev.calorytracker.core.R
-import uz.javokhirdev.calorytracker.core.util.UiEvent
 import uz.javokhirdev.calorytracker.coreui.LocalSpacing
 import uz.javokhirdev.calorytracker.tracker.presentation.overview.components.*
 
 @ExperimentalCoilApi
 @Composable
 fun TrackerOverviewScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNavigateToSearch: (String, Int, Int, Int) -> Unit,
     viewModel: TrackerOverviewVM = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
-    val context = LocalContext.current
     val state = viewModel.state
+    val context = LocalContext.current
 
     LazyColumn(
         modifier = Modifier
@@ -65,7 +64,7 @@ fun TrackerOverviewScreen(
                                     viewModel.onEvent(
                                         TrackerOverviewEvent.OnDeleteTrackedFoodClick(food)
                                     )
-                                },
+                                }
                             )
                             Spacer(modifier = Modifier.height(spacing.spaceMedium))
                         }
@@ -75,7 +74,12 @@ fun TrackerOverviewScreen(
                                 meal.name.asString(context)
                             ),
                             onClick = {
-                                viewModel.onEvent(TrackerOverviewEvent.OnAddFoodClick(meal))
+                                onNavigateToSearch(
+                                    meal.name.asString(context),
+                                    state.date.dayOfMonth,
+                                    state.date.monthValue,
+                                    state.date.year
+                                )
                             },
                             modifier = Modifier.fillMaxWidth()
                         )

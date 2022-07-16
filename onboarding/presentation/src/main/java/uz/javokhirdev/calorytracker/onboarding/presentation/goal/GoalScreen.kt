@@ -13,7 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import uz.javokhirdev.calorytracker.core.R
-import uz.javokhirdev.calorytracker.core.model.GoalType
+import uz.javokhirdev.calorytracker.core.domain.model.GoalType
 import uz.javokhirdev.calorytracker.core.util.UiEvent
 import uz.javokhirdev.calorytracker.coreui.LocalSpacing
 import uz.javokhirdev.calorytracker.onboarding.presentation.components.ActionButton
@@ -21,7 +21,7 @@ import uz.javokhirdev.calorytracker.onboarding.presentation.components.Selectabl
 
 @Composable
 fun GoalScreen(
-    onNavigate: (UiEvent.Navigate) -> Unit,
+    onNextClick: () -> Unit,
     viewModel: GoalVM = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
@@ -29,7 +29,7 @@ fun GoalScreen(
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collectLatest { event ->
             when (event) {
-                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.Success -> onNextClick()
                 else -> Unit
             }
         }

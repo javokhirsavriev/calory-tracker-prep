@@ -46,7 +46,9 @@ fun ExpandableMeal(
                 contentDescription = meal.name.asString(context)
             )
             Spacer(modifier = Modifier.width(spacing.spaceMedium))
-            Column(modifier = Modifier.weight(1f)) {
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier.fillMaxWidth()
